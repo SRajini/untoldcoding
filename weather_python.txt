@@ -1,0 +1,20 @@
+import requests
+city = input('enter the city :')
+api="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=c07a4339db00c52d8a89a9383a042091"
+weather_report = requests.get(api).json()
+temp = int(weather_report ['main']['temp'] - 273.15)
+pressure = weather_report ['main']['pressure']
+humidity = weather_report ['main']['humidity']
+wind = weather_report ['wind']['speed']
+print('The temperature is:',temp)
+print('Presure is:',pressure)
+print('Humidity is:',humidity)
+print('Wind speed is',wind)
+
+output:
+
+enter the city: india
+The temperature is: 6
+Presure is: 1014
+Humidity is: 57
+Wind speed is 1.99
